@@ -1,0 +1,30 @@
+﻿@using PROYECTOF.Models;
+@model Administrador;
+
+@{
+    ViewData["title"] = "Crear";
+}
+<h5 class="card-title">Administradores</h5>
+
+<form  method="post" asp-controller="Administrador" asp-action="Crear" class="row g-3">
+ 
+  <div class="col-md-4">
+    <label for="identi" class="form-label">Identificacion del Administrador</label>
+    <input asp-for="identificacion" type="number" class="form-control" id="identi"  required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="name" class="form-label">Nombre</label>
+    <input asp-for="nombre" type="text" class="form-control" id="nom" required>
+  </div>
+
+    <div class="col-md-12">
+    <label for="tipe" class="form-label">Tipo de Admin</label>
+    <input asp-for="tipo" type="text" class="form-control" id="tip" required>
+  </div>
+  
+  
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Registrar</button>
+  </div>
+</form>

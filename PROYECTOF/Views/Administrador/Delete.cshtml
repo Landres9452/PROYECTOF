@@ -1,0 +1,36 @@
+﻿@using PROYECTOF.Models;
+@model Administrador;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+     ViewData["title"] = "Eliminar";
+}
+
+<h5 class="card-title">Eliminar Admin</h5>
+
+<form  method="post" asp-controller="Administrador" asp-action="Eliminar" class="row g-3">
+ 
+    <input asp-for="Id" type="hidden" class="form-control" id="name"  required>
+
+  <div class="col-md-4">
+    <label for="identifi" class="form-label">Identificacion</label>
+    <input asp-for="identificacion" type="number" class="form-control" id="ident"  required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="name" class="form-label">Nombre</label>
+    <input asp-for="nombre" type="text" class="form-control" id="name" required>
+  </div>
+
+    <div class="col-md-12">
+    <label for="tipe" class="form-label">Tipo de Admin</label>
+    <input asp-for="tipo" type="text" class="form-control" id="tip" required>
+  </div>
+  
+  
+  <div class="col-12">
+    <button class="btn btn-danger" type="submit" >Eliminar</button>
+  </div>
+</form>

@@ -1,0 +1,56 @@
+﻿@using PROYECTOF.Models;
+@model List<Administrador>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "Index";
+}
+<h5 class="card-title">Administadores</h5>
+
+@if(Model.Count !=0){
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Identificacion</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var e in Model)
+      {
+      <tr>
+      <td>@e.Id </td>
+      <td>@e.identificacion</td>
+      <td>@e.nombre</td>
+      <td>@e.tipo</td>
+      <td><a class="btn btn-primary" asp-area="" asp-controller="Administrador" asp-action="Update" asp-route-id="@e.Id"
+      asp-route-name="@e.identificacion"
+      asp-route-adress="@e.nombre"
+      asp-route-nit="@e.tipo"
+      > Editar</a>
+      </td> 
+       <td><a class="btn btn-danger" asp-area="" asp-controller="Administrador" asp-action="Delete" asp-route-id="@e.Id"
+      asp-route-name="@e.identificacion"
+      asp-route-adress="@e.nombre"
+      asp-route-nit="@e.tipo"
+      > Eliminar</a></td> 
+    </tr>
+      }
+  </tbody>
+</table>
+<a  class="btn btn-primary" asp-area="" asp-controller="Administrador" asp-action="Crear">Crear Administrador</a>
+
+} else{
+      <div class="card">
+        <div class="card-body">
+            No hay datos.
+        </div>
+    </div>
+    <a  class="btn btn-primary" asp-area="" asp-controller="Administrador" asp-action="Crear">Crear Administrador</a>
+}
